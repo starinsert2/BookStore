@@ -21,7 +21,7 @@ void Book::addNewBook(istream& ins)
 		cout << "Enter author: ";
 		if (ins.peek() == '\n')ins.ignore();
 		getline(ins, author);
-		cout << "Enter salary: ";
+		cout << "Enter cost: ";
 		ins >> cost;
 		cout << "Enter retail price: ";
 		ins >> retailPrice;
@@ -36,6 +36,10 @@ string Book::getTitle() const
 	return title;
 }
 
+string Book::getAuthor() const
+{
+	return author;
+}
 string Book::getPublisher() const
 {
 	return publisher;
@@ -74,6 +78,11 @@ void Book::setBookID(const string& newID)
 void Book::setTitle(const string& newTitle)
 {
 	title = newTitle;
+}
+
+void Book::setAuthor(const string& newAuthor)
+{
+	author = newAuthor;
 }
 
 void Book::setPublisher(const string& newPublisher)

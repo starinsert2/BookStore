@@ -27,9 +27,7 @@ void displayMenu()
 	cout << "    1: Add a new book" << endl;
 	cout << "    2: Print all books" << endl;
 	cout << "    3: Edit a book" << endl;
-	cout << "    4: Print students by course" << endl;
-	cout << "    5: Print students on hold" << endl;
-	cout << "    6: Print students to file" << endl;
+
 	cout << "    7: Exit" << endl;
 }
 

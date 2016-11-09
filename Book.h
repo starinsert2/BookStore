@@ -15,6 +15,7 @@ class Book
 		void addNewBook(istream& ins);
 		string getBookID() const;
 		string getTitle() const;
+		string getAuthor() const;
 		string getPublisher() const;
 		condition getCondition() const;
 		int getPublication() const;
@@ -24,6 +25,7 @@ class Book
 		void setBookID(const string& newID);
 		void setTitle(const string& newTitle);
 		void setPublisher(const string& newPublisher);
+		void setAuthor(const string& newAuthor);
 		void setCondition(condition& newCondition);
 		void setPublication(int newPublication);
 		void setEdition(int newEdition);

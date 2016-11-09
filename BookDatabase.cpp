@@ -29,10 +29,11 @@ void BookDatabase::editBookAt(int index)
 	cout << "What would you want to edit?" << endl;
 	cout << " 1. Title" << endl;
 	cout << " 2. BookID" << endl;
-	cout << " 3. Publisher" << endl;
-	cout << " 4. Publication Date" << endl;
-	cout << " 5. Edition" << endl;
-	cout << " 6. Cost" << endl;
+	cout << " 3. Author" << endl;
+	cout << " 4. Publisher" << endl;
+	cout << " 5. Publication Date" << endl;
+	cout << " 6. Edition" << endl;
+	cout << " 7. Cost" << endl;
 
 	int choice, intEdit = 0;
 	string stringEdit;
@@ -41,7 +42,7 @@ void BookDatabase::editBookAt(int index)
 	cin >> choice;
 	cout << endl;
 
-	while (choice != 7)
+	while (choice != 8)
 	{
 		switch (choice)
 		{
@@ -62,6 +63,13 @@ void BookDatabase::editBookAt(int index)
 			break;
 
 		case 3:
+			cout << "Enter new author" << endl;
+			cin.ignore(1, ' ');
+			getline(cin, stringEdit);
+			bookPtr[index].setAuthor(stringEdit);
+
+			break;
+		case 4:
 			cout << "Enter new Publisher" << endl;
 			cin.ignore(1, ' ');
 			getline(cin, stringEdit);
@@ -69,21 +77,21 @@ void BookDatabase::editBookAt(int index)
 
 			break;
 
-		case 4:
+		case 5:
 			cout << "Enter new publication date" << endl;
 			cin >> intEdit;
 			bookPtr[index].setPublication(intEdit);
 
 			break;
 
-		case 5:
+		case 6:
 			cout << "Enter new edition number" << endl;
 			cin >> intEdit;
 			bookPtr[index].setEdition(intEdit);
 
 			break;
 
-		case 6:
+		case 7:
 			cout << "Enter new cost" << endl;
 			cin >> intEdit;
 			bookPtr[index].setCost(intEdit);

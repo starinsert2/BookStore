@@ -2,7 +2,14 @@
 
 Book::Book()
 {
-
+	bookID = "";
+	title = "";
+	author = "";
+	publisher = "";
+	publication = 0;
+	edition = 0;
+	bookCondition = good;
+	isSold = false;
 }
 
 string Book::getBookID() const
@@ -45,22 +52,22 @@ int Book::getRetail()const
 	return retailPrice;
 }
 
-void Book::setBookID(int newID)
+void Book::setBookID(const string& newID)
 {
 	bookID = newID;
 }
 
-void Book::setTitle(const string newTitle)
+void Book::setTitle(const string& newTitle)
 {
 	title = newTitle;
 }
 
-void Book::setPublisher(const string newPublisher)
+void Book::setPublisher(const string& newPublisher)
 {
 	publisher = newPublisher;
 }
 
-void Book::setCondition(condition newCondition)
+void Book::setCondition(condition& newCondition)
 {
 	bookCondition = newCondition;
 }
@@ -72,7 +79,7 @@ void Book::setPublication(int newPublication)
 
 void Book::setEdition(int newEdition)
 {
-	edition = newEdition
+	edition = newEdition;
 }
 
 void Book::setCost(int newCost)
@@ -85,6 +92,21 @@ void Book::setRetailPrice(int newRetailPrice)
 	retailPrice = newRetailPrice;
 }
 
+void Book::printBook() const
+{
+	cout << "Book ID: " << bookID << endl;
+	cout << "Title: " << title << endl;
+	cout << "Publisher: " << publisher << endl;
+	cout << "Published " << publication << endl;
+	cout << "Edition: " << edition << endl;
+	cout << "Condition: " << bookCondition << endl;
+	if (isSold)
+		cout << "Sold to" << endl;
+	else
+		cout << "In Stock" << endl;
+	cout << endl;
+
+}
 Book::~Book()
 {
 

@@ -100,6 +100,7 @@ void Book::printBook() const
 	cout << "Published " << publication << endl;
 	cout << "Edition: " << edition << endl;
 	cout << "Condition: " << bookCondition << endl;
+
 	if (isSold)
 		cout << "Sold to" << endl;
 	else

@@ -58,13 +58,44 @@ void BookDatabase::editBookAt(int index)
 			bookPtr[index].setPublisher(stringEdit);
 
 			break;
+
+		case 4:
+			cout << "Enter new publication date" << endl;
+			cin >> intEdit;
+			bookPtr[index].setPublication(intEdit);
+
+			break;
+
+		case 5:
+			cout << "Enter new edition number" << endl;
+			cin >> intEdit;
+			bookPtr[index].setEdition(intEdit);
+
+			break;
+
+		case 6:
+			cout << "Enter new cost" << endl;
+			cin >> intEdit;
+			bookPtr[index].setCost(intEdit);
+
+			break;
+
 		default:
 			cout << "Invalid Selection" << endl;
 
 			break;
 		}
 
+		cout << endl;
 		system("Pause");
+		cout << endl;
+		cout << "What would you want to edit?" << endl;
+		cout << " 1. Title" << endl;
+		cout << " 2. BookID" << endl;
+		cout << " 3. Publisher" << endl;
+		cout << " 4. Publication Date" << endl;
+		cout << " 5. Edition" << endl;
+		cout << " 6. Cost" << endl;
 
 		cout << "\nEnter your choice: ";
 		cin >> choice;

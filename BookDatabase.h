@@ -12,6 +12,7 @@ public:
 	void printall() const;
 	void editBookAt(int index);
 	Book getBook(int index) const;
+	void printBookTitle() const;
 	~BookDatabase();
 private:
 	Book* bookPtr;

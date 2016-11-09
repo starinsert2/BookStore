@@ -26,7 +26,7 @@ void displayMenu()
 	cout << "\nSelect one of the following:\n\n";
 	cout << "    1: Add a new book" << endl;
 	cout << "    2: Print all books" << endl;
-	cout << "    3: Search student by last name" << endl;
+	cout << "    3: Edit a book" << endl;
 	cout << "    4: Print students by course" << endl;
 	cout << "    5: Print students on hold" << endl;
 	cout << "    6: Print students to file" << endl;
@@ -60,6 +60,7 @@ void processChoice(BookDatabase& database)
 			break;
 
 		case 3:
+			database.printBookTitle();
 			cout << "Enter index to edit? ";
 			cin >> intEdit;
 			database.editBookAt(intEdit);
@@ -72,6 +73,7 @@ void processChoice(BookDatabase& database)
 		}
 
 		system("Pause");
+		system("CLS");
 		displayMenu();
 
 		cout << "\nEnter your choice: ";

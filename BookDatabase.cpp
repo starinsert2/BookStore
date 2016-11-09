@@ -119,6 +119,11 @@ Book BookDatabase::getBook(int index) const
 	return bookPtr[index];
 }
 
+void BookDatabase::printBookTitle() const
+{
+	for (int i = 0; i < used; i++)
+		cout << i + 1 <<". " << bookPtr[i].getTitle() << endl;
+}
 BookDatabase::~BookDatabase()
 {
 

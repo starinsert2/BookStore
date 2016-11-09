@@ -8,6 +8,7 @@ class BookDatabase
 {
 public:
 	BookDatabase();
+	void addBook(const Book& newBook);
 	void printall() const;
 	void editBookAt(int index);
 	Book getBook(int index) const;

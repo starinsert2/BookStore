@@ -7,6 +7,16 @@ BookDatabase::BookDatabase()
 	bookPtr = new Book[capacity];
 }
 
+void BookDatabase::addBook(const Book& newBook)
+{
+	if (used < capacity)
+	{
+		bookPtr[used] = newBook;
+		used++;
+	}
+	else
+		cerr << "Database is full" << endl;
+}
 void BookDatabase::printall() const
 {
 	for (int i = 0; i < 5; i++)

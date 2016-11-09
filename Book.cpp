@@ -12,6 +12,20 @@ Book::Book()
 	isSold = false;
 }
 
+void Book::addNewBook(istream& ins)
+{
+		cout << "Name: ";
+		getline(ins, title);
+		cout << "Enter Id Number ";
+		ins >> bookID;
+		cout << "Enter author: ";
+		if (ins.peek() == '\n')ins.ignore();
+		getline(ins, author);
+		cout << "Enter salary: ";
+		ins >> cost;
+		cout << "Enter retail price: ";
+		ins >> retailPrice;
+}
 string Book::getBookID() const
 {
 	return bookID;
@@ -96,6 +110,7 @@ void Book::printBook() const
 {
 	cout << "Book ID: " << bookID << endl;
 	cout << "Title: " << title << endl;
+	cout << "Author: " << author << endl;
 	cout << "Publisher: " << publisher << endl;
 	cout << "Published " << publication << endl;
 	cout << "Edition: " << edition << endl;
@@ -108,7 +123,14 @@ void Book::printBook() const
 	cout << endl;
 
 }
+
 Book::~Book()
 {
 
+}
+
+istream& operator >> (istream& ins, Book& tempBook)
+{
+	tempBook.addNewBook(ins);
+	return ins;
 }

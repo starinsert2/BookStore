@@ -9,8 +9,10 @@ using namespace std;
 enum condition { excellent, good, fair, poor };
 class Book
 {
+	friend istream& operator>>(istream& ins, Book& tempBook);
 	public:
 		Book();
+		void addNewBook(istream& ins);
 		string getBookID() const;
 		string getTitle() const;
 		string getPublisher() const;
@@ -28,7 +30,6 @@ class Book
 		void setCost(int newCost);
 		void setRetailPrice(int newRetailPrice);
 		void printBook() const;
-		
 		~Book();
 private:
 	string bookID, title, publisher, author;
@@ -36,4 +37,5 @@ private:
 	condition bookCondition;
 	bool isSold;
 };
+
 #endif // !

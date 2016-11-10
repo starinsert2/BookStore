@@ -142,6 +142,8 @@ void BookDatabase::saveToFile(ofstream& out)
 		for (int i = 0; i < used; i++)
 			bookPtr[i].printBookToFile(out);
 
+		out << endl;
+		out << "END";
 	}
 
 }

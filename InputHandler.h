@@ -22,6 +22,8 @@ void createBookList(ifstream& infile, BookDatabase& Database)
 
 	while (bookID != "END")
 	{
+		if (infile.peek() == ' ')
+			infile.ignore();
 		getline(infile, title);
 		getline(infile, author);
 		getline(infile, publisher);

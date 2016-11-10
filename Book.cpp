@@ -30,15 +30,31 @@ void Book::addNewBook(istream& ins)
 {
 		cout << "Name: ";
 		getline(ins, title);
+
 		cout << "Enter Id Number ";
-		ins >> bookID;
+		getline(ins, bookID);
+
 		cout << "Enter author: ";
-		if (ins.peek() == '\n')ins.ignore();
+		//if (ins.peek() == '\n')
+		//	ins.ignore();
 		getline(ins, author);
+
+		cout << "Enter Publisher";
+		getline(ins, publisher);
+		
+		cout << "Enter Publication Year";
+		ins >> publication;
+
+		cout << "Enter edition number";
+		ins >> edition;
+
 		cout << "Enter cost: ";
 		ins >> cost;
+
 		cout << "Enter retail price: ";
 		ins >> retailPrice;
+
+		cout << "Enter Condition of the Book";
 }
 string Book::getBookID() const
 {
@@ -153,6 +169,7 @@ void Book::printBookToFile(ofstream& out)
 	out << author << endl;
 	out << publisher << endl;
 	out << publication <<" "<< edition << " "<< cost << " " << retailPrice << endl;
+	out << endl;
 }
 Book::~Book()
 {

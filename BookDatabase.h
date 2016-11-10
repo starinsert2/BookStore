@@ -16,6 +16,7 @@ public:
 	void saveToFile(ofstream& out);
 	~BookDatabase();
 private:
+	void make_bigger();
 	Book* bookPtr;
 	int capacity, used;
 };

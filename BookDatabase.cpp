@@ -9,17 +9,17 @@ BookDatabase::BookDatabase()
 
 void BookDatabase::addBook(const Book& newBook)
 {
-	if (used < capacity)
+	if (used >= capacity)
 	{
-		bookPtr[used] = newBook;
-		used++;
+		cout << "Database is full, Doubling Size. . ." << endl;
+		make_bigger();
 	}
-	else
-		cerr << "Database is full" << endl;
+	bookPtr[used] = newBook;
+	used++;
 }
 void BookDatabase::printall() const
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < used; i++)
 		bookPtr[i].printBook();
 }
 
@@ -147,6 +147,18 @@ void BookDatabase::saveToFile(ofstream& out)
 	}
 
 }
+
+void BookDatabase::make_bigger()
+{
+	Book *temp;
+	temp = new Book[capacity * 2];
+	for (int i = 0; i < used; i++)
+		temp[i] = bookPtr[i];
+	delete[] bookPtr;
+	bookPtr = temp;
+	capacity *= 2;
+}
+
 BookDatabase::~BookDatabase()
 {
 

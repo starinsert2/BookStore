@@ -13,6 +13,7 @@ public:
 	void editBookAt(int index);
 	Book getBook(int index) const;
 	void printBookTitle() const;
+	void saveToFile(ofstream& out);
 	~BookDatabase();
 private:
 	Book* bookPtr;

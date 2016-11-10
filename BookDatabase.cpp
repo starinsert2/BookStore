@@ -110,11 +110,11 @@ void BookDatabase::editBookAt(int index)
 		cout << "What would you want to edit?" << endl;
 		cout << " 1. Title" << endl;
 		cout << " 2. BookID" << endl;
-		cout << " 3. Publisher" << endl;
-		cout << " 4. Publication Date" << endl;
-		cout << " 5. Edition" << endl;
-		cout << " 6. Cost" << endl;
-
+		cout << " 3. Author" << endl;
+		cout << " 4. Publisher" << endl;
+		cout << " 5. Publication Date" << endl;
+		cout << " 6. Edition" << endl;
+		cout << " 7. Cost" << endl;
 		cout << "\nEnter your choice: ";
 		cin >> choice;
 		cout << endl;
@@ -131,6 +131,19 @@ void BookDatabase::printBookTitle() const
 {
 	for (int i = 0; i < used; i++)
 		cout << i + 1 <<". " << bookPtr[i].getTitle() << endl;
+}
+
+void BookDatabase::saveToFile(ofstream& out)
+{
+	if (used == 0)
+		cerr << "There is nothing to save" << endl;
+	else
+	{
+		for (int i = 0; i < used; i++)
+			bookPtr[i].printBookToFile(out);
+
+	}
+
 }
 BookDatabase::~BookDatabase()
 {

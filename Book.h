@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -12,6 +13,8 @@ class Book
 	friend istream& operator>>(istream& ins, Book& tempBook);
 	public:
 		Book();
+		void setBook(const string& newBookID, const string& newTitle, const string& newAuthor, const string& newPublisher,
+			int newPublication, int newEditon, int newCost, int newRetailPrice);
 		void addNewBook(istream& ins);
 		string getBookID() const;
 		string getTitle() const;
@@ -32,6 +35,7 @@ class Book
 		void setCost(int newCost);
 		void setRetailPrice(int newRetailPrice);
 		void printBook() const;
+		void printBookToFile(ofstream& out);
 		~Book();
 private:
 	string bookID, title, publisher, author;

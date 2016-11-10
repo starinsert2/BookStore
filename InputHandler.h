@@ -10,48 +10,34 @@ using namespace std;
 
 const char STUDENT_DATA[] = "student_data.txt";
 
-void createStudentList(ifstream& infile, BookDatabase& database)
+void createBookList(ifstream& infile, BookDatabase& Database)
 {
-	string fName, lName;
-	int id, noOfCourses;
-	char isPaid;
-	bool isTuitionPaid;
 
-	string cName, cNo;
-	int credits;
-	char grade;
 
-	Course cTemp;
-	Student sTemp;
-	vector<Course> courses;	  //vector of objects to store course info
+	Book tempBook;
+	string bookID,title,author,publisher;
+	int publication, edition, cost, retailPrice;
 
-	infile >> tuitionRate >> fName;
+	infile >> bookID;
 
-	while (fName != "END")
+	while (bookID != "END")
 	{
-		infile >> lName >> id >> isPaid;
+		getline(infile, title);
+		getline(infile, author);
+		getline(infile, publisher);
 
-		isTuitionPaid = (isPaid == 'Y');
 
-		infile >> noOfCourses;
+		infile >> publication >> edition >> cost >> retailPrice;
 
-		courses.clear(); //empty vector
 
-		for (int i = 0; i < noOfCourses; ++i)
-		{
-			infile >> cName >> cNo >> credits >> grade;
-			cTemp.setCourseInfo(cName, cNo, grade, credits);
-			courses.push_back(cTemp);
-		}
+		tempBook.setBook(bookID, title, author, publisher, publication, edition, cost, retailPrice);
+		Database.addBook(tempBook);
 
-		sTemp.setStudentInfo(fName, lName, id, isTuitionPaid, courses);
-		studentList.addStudent(sTemp);
-
-		infile >> fName;
+		infile >> bookID;
 	}
 }
 
-void readStudentData(StudentList& studentList, double& tuitionRate)
+void readBookData(BookDatabase& Database)
 {
 	ifstream infile;
 
@@ -64,7 +50,7 @@ void readStudentData(StudentList& studentList, double& tuitionRate)
 		exit(1);
 	}
 
-	createStudentList(infile, studentList, tuitionRate);
+	createBookList(infile, Database);
 
 	infile.close();
 }

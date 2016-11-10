@@ -12,6 +12,20 @@ Book::Book()
 	isSold = false;
 }
 
+void Book::setBook(const string& newBookID, const string& newTitle, const string& newAuthor, const string& newPublisher,
+	int newPublication, int newEditon, int newCost, int newRetailPrice)
+{
+	bookID = newBookID;
+	title = newTitle;
+	author = newAuthor;
+	publisher = newPublisher;
+	publication = newPublication;
+	edition = newEditon;
+	cost = newCost;
+	retailPrice = newRetailPrice;
+	bookCondition = good;
+}
+
 void Book::addNewBook(istream& ins)
 {
 		cout << "Name: ";
@@ -133,6 +147,13 @@ void Book::printBook() const
 
 }
 
+void Book::printBookToFile(ofstream& out)
+{
+	out << bookID << " " << title << endl;
+	out << author << endl;
+	out << publisher << endl;
+	out << publication <<" "<< edition << " "<< cost << " " << retailPrice << endl;
+}
 Book::~Book()
 {
 

@@ -1,5 +1,5 @@
 #include "BookDatabase.h";
-
+#include "InputHandler.h"
 #include <iostream>
 
 using namespace std;
@@ -9,10 +9,11 @@ void processChoice(BookDatabase& database);
 
 int main()
 {
-	BookDatabase database;
+	BookDatabase Database;
 
+	readBookData(Database);
 	displayMenu();
-	processChoice(database);
+	processChoice(Database);
 
 	cout << endl;
 
@@ -27,7 +28,7 @@ void displayMenu()
 	cout << "    1: Add a new book" << endl;
 	cout << "    2: Print all books" << endl;
 	cout << "    3: Edit a book" << endl;
-
+	cout << "    4. Save to File" << endl;
 	cout << "    7: Exit" << endl;
 }
 
@@ -36,6 +37,8 @@ void processChoice(BookDatabase& database)
 	string stringEdit = "";
 	int intEdit, choice;
 	Book bookie;
+	ofstream out;
+	out.open("student_test.txt");
 
 	cout << "\nEnter your choice: ";
 	cin >> choice;
@@ -62,6 +65,11 @@ void processChoice(BookDatabase& database)
 			cout << "Enter index to edit? ";
 			cin >> intEdit;
 			database.editBookAt(intEdit);
+
+			break;
+
+		case 4:
+			database.saveToFile(out);
 
 			break;
 		default:

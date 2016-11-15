@@ -39,13 +39,13 @@ void Book::addNewBook(istream& ins)
 		//	ins.ignore();
 		getline(ins, author);
 
-		cout << "Enter Publisher";
+		cout << "Enter Publisher: ";
 		getline(ins, publisher);
 		
-		cout << "Enter Publication Year";
+		cout << "Enter Publication Year: ";
 		ins >> publication;
 
-		cout << "Enter edition number";
+		cout << "Enter edition number: ";
 		ins >> edition;
 
 		cout << "Enter cost: ";
@@ -55,6 +55,21 @@ void Book::addNewBook(istream& ins)
 		ins >> retailPrice;
 
 		cout << "Enter Condition of the Book";
+		int newCondition = -1;
+		while (newCondition < 0 || newCondition > 3)
+		{
+			ins >> newCondition;
+			if (newCondition == 0)
+				bookCondition = excellent;
+			else if (newCondition == 1)
+				bookCondition = good;
+			else if (newCondition == 2)
+				bookCondition = fair;
+			else if (newCondition == 3)
+				bookCondition = poor;
+			else
+				cout << "Invalid Entry, Try Again. ";
+		}
 }
 string Book::getBookID() const
 {

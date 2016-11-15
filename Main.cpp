@@ -64,7 +64,7 @@ void processChoice(BookDatabase& database)
 			database.printBookTitle();
 			cout << "Enter index to edit? ";
 			cin >> intEdit;
-			database.editBookAt(intEdit);
+			database.editBookAt(--intEdit);
 
 			break;
 

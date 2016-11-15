@@ -110,9 +110,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Author.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="BookDatabase.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Person.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Author.h" />
@@ -120,6 +122,7 @@
     <ClInclude Include="BookDatabase.h" />
     <ClInclude Include="Employee.h" />
     <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="Person.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="student_data.txt" />

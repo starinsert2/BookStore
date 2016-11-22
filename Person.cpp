@@ -28,7 +28,7 @@ void Person::setName(const string& newLastName, const string& newFirstName)
 	lastName = newLastName;
 }
 
-void Person::setDateOfBirth(const int newDateOfBirth)
+void Person::setDateOfBirth(int newDateOfBirth)
 {
 	dateOfBirth = newDateOfBirth;
 }

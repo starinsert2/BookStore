@@ -21,7 +21,7 @@ void Author::setIdNumber(const int newIdNumber)
 	idNumber = newIdNumber;
 }
 
-void Author::setYearOfDeath(const int newYearOfDeath)
+void Author::setYearOfDeath(int newYearOfDeath)
 {
 	yearOfDeath = newYearOfDeath;
 }

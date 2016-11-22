@@ -14,7 +14,7 @@ public:
 	string getFirstName() const;
 	int getDateOfBirth() const;
 	void setName(const string& newLastName, const string& newFirstName);
-	void setDateOfBirth(const int newDateOfBirth);
+	void setDateOfBirth(int newDateOfBirth);
 	void printName() const;
 
 	~Person();

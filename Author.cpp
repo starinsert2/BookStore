@@ -2,8 +2,8 @@
 
 Author::Author()
 {
-	idNumber = 1234;
-	yearOfDeath = 1234;
+	idNumber = 0;
+	yearOfDeath = 0;
 }
 
 int Author::getIdNumber() const
@@ -16,12 +16,12 @@ int Author::getYearOfDeath() const
 	return yearOfDeath;
 }
 
-void Author::setIdNumber(const int newIdNumber)
+void Author::setIdNumber(int newIdNumber)
 {
 	idNumber = newIdNumber;
 }
 
-void Author::setYearOfDeath(const int newYearOfDeath)
+void Author::setYearOfDeath(int newYearOfDeath)
 {
 	yearOfDeath = newYearOfDeath;
 }

@@ -12,8 +12,8 @@ public:
 	Author();
 	int getIdNumber() const;
 	int getYearOfDeath() const;
-	void setIdNumber(const int newIdNumber);
-	void setYearOfDeath(const int newYearOfDeath);
+	void setIdNumber(int newIdNumber);
+	void setYearOfDeath(int newYearOfDeath);
 	void printAuthorInfo() const;
 
 	~Author();
